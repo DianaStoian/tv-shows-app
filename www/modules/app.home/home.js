@@ -18,10 +18,17 @@
       url: '/home',
       views: {
         '': {
-          templateUrl: templateUtils.getUrlFromModule(module)
+          templateUrl: templateUtils.getUrlFromModule(module),
+          controller: 'serieController as controller'
         }
       }
-    });
+    })
+	 .state('serieDetails', {
+    url:'/serieDetails/:serieID',
+    templateUrl:'seriesDetails.html',
+	params: {'serieId': null},
+    controller:'serieDetailsController as controller'
+  });
   }
 
   module.config(['$stateProvider', 'templateUtilsProvider', config]);
