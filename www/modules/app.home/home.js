@@ -24,11 +24,18 @@
       }
     })
 	 .state('serieDetails', {
-    url:'/serieDetails/:serieID',
+    url:'/serieDetails/:serieId',
     templateUrl:'seriesDetails.html',
 	params: {'serieId': null},
     controller:'serieDetailsController as controller'
-  });
+  })
+  .state('seasonDetails', {
+    url:'/serieDetails/',
+    templateUrl:'seasonDetails.html',
+	params: {'season': null},
+    controller:'seasonDetailsController as controller'
+  })
+  ;
   }
 
   module.config(['$stateProvider', 'templateUtilsProvider', config]);

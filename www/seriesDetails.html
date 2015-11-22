@@ -10,6 +10,7 @@
 				<ion-list>
 		  <ion-item class="item-icon-right"
 		     ng-repeat="season in whichSerie.seasons"
+			 on-tap="controller.viewEpisodes({{season}})"
 			>
 		    Season {{ season.number}}
 			<i class="icon ion-chevron-right icon-accessory"></i>
