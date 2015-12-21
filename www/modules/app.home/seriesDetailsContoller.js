@@ -3,6 +3,7 @@
 
   function serieDetailsController($scope, seriesDetailsService, $state) {
 	var controller = this;
+	
 	seriesDetailsService.getSeriesDetails($state.params.serieId).then(function (seriesDetails) {
         $scope.whichSerie = seriesDetails;
       });

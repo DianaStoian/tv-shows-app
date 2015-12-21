@@ -1,13 +1,13 @@
 (function (module) {
   'use strict';
 
-  var URL = 'http://series-ortiz.rhcloud.com/series/';
+  var URL = 'http://www.omdbapi.com/';
 
   function SeriesDetailsService($http) {
     var service = this;
 
     service.getSeriesDetails = function (serieId) {
-      return $http.jsonp(URL + serieId,{params:{s:"thetvdb", callback:"JSON_CALLBACK"}}).then(function (response) {
+      return $http.jsonp(URL,{params:{i:serieId, callback:"JSON_CALLBACK"}}).then(function (response) {
         return response.data;
       });
     };

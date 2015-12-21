@@ -8,14 +8,14 @@
     var controller = this;
 
     controller.getShows = function(){
-      serieService.getSeries($scope.search.string).then(function (series) {
-        $scope.series = series;
+      serieService.getSeries($scope.search.string).then(function (result) {
+        $scope.series = result.Search;
 		$scope.firstTime = true;
       });
     }
 	
 	controller.viewSerie = function(serie){
-		$state.go('serieDetails' , { serieId : serie.id});
+		$state.go('serieDetails' , { serieId : serie.imdbID});
 	}
 	
 	controller.loadMore = function (){
